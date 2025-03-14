@@ -1,0 +1,492 @@
+:root {
+    --bg: #fafafa;
+    --blue: #1E90FF;
+    --pink: #fd33b0;
+    --h1: 5rem;
+    --h1-small: 3.5rem;
+
+}
+
+@keyframes attention {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.06);
+    }
+}
+
+body {
+    color: black;
+    overflow-x: hidden;
+    width: 100vw;
+    margin: 0;
+}
+
+#hero {
+    height: 100vh;
+    background-image: url('../img/bg/—Pngtree—delicate\ light\ pink\ watercolor\ texture_15231073.png');
+    background-position: center;
+    background-size: cover;
+    overflow-y: visible;
+    position: relative;
+}
+
+#hero h1 {
+    font-family: "Imperial Script", cursive;
+    font-weight: bold;
+    font-size: var(--h1);
+    color: var(--pink);
+}
+
+#hero h2 {
+    color: #c9057e;
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: "Petit Formal Script", cursive;
+}
+
+#hero h4,
+#hero h5 {
+    font-size: 0.6rem;
+    font-family: "Petit Formal Script", cursive;
+    font-weight: bold;
+}
+
+#hero h5 {
+    font-size: 0.5rem;
+}
+
+#hero p {
+    font-size: 0.7rem;
+    font-family: "Bentham", serif;
+    font-weight: bold;
+    animation: attention 1s infinite;
+}
+
+.cloud-love {
+    width: 50%;
+    position: absolute;
+    left: 40px;
+    top: 1px;
+    z-index: -1;
+}
+
+.cloud-love-2 {
+    width: 50%;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}
+
+#cloud-z .cloud-pink,
+#cloud-z .cloud-pink-1,
+#cloud-z .cloud-pink-2,
+#cloud-z .cloud-pink-3,
+#cloud-z .cloud-pink-4,
+#cloud-z .cloud-pink-5,
+#cloud-z .cloud-pink-6,
+#cloud-z .cloud-pink-7 {
+    height: 75%;
+    position: absolute;
+    bottom: -200px;
+}
+
+#cloud-z-1 .cloud-pink,
+#cloud-z-1 .cloud-pink-1,
+#cloud-z-1 .cloud-pink-2,
+#cloud-z-1 .cloud-pink-3,
+#cloud-z-1 .cloud-pink-4,
+#cloud-z-1 .cloud-pink-5,
+#cloud-z-1 .cloud-pink-6 {
+    height: 85%;
+    position: absolute;
+    z-index: -1;
+    bottom: 5px;
+}
+
+.cloud-pink {
+    left: 30%;
+}
+
+.cloud-pink-1 {
+    left: 1%;
+}
+
+.cloud-pink-2 {
+    right: 1%;
+}
+
+.cloud-pink-3 {
+    right: 20%;
+}
+
+.cloud-pink-4 {
+    right: -5%;
+}
+
+.cloud-pink-5 {
+    left: -5%;
+}
+
+.cloud-pink-6 {
+    left: 1%;
+}
+
+.cloud-pink-7 {
+    height: 40%;
+    left: -500px;
+}
+
+#content .home {
+    background-image: url('../img/bg/—Pngtree—pastel\ texture\ watercolor\ shading\ blue_15153267.png');
+    background-position-x: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+#content .home .bismillah {
+    margin: auto;
+    width: 50%;
+    max-width: 200px;
+}
+
+#content .home h1 {
+    font-family: "Imperial Script", cursive;
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+
+#content .home h4 {
+    font-size: 0.8rem;
+    font-family: 'Outfit', 'sans-serif';
+}
+
+#content .home h3 {
+    font-family: 'Bentham', 'serif';
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+#content .home #ikhsan img,
+#sofia img {
+    width: 100%;
+    margin: 0;
+}
+
+#content .home #ikhsan h2,
+#content .home #sofia h2 {
+    font-family: 'Imperial Script', cursive;
+    font-size: 3.5rem;
+    color: var(--blue);
+
+}
+
+#content .home #sofia h2 {
+    color: var(--pink);
+}
+
+#content .home #ikhsan,
+#content .home #sofia p {
+    font-size: 0.8rem;
+    font-family: 'Outfit', 'sans-serif';
+}
+
+#content .info {
+    position: relative;
+    text-align: center;
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 20px 5px;
+}
+
+#content .info::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url('../img/bg/—Pngtree—pastel\ texture\ watercolor\ shading\ blue_15153267.png');
+    background-position-y: bottom;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    transform: scaleY(-1);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+}
+
+#content .info h1 {
+    font-family: "Imperial Script", cursive;
+    font-size: var(--h1);
+    width: fit-content;
+    /* border-bottom: 2px solid white; */
+    margin: auto;
+}
+
+#content .info h2 {
+    font-family: "Petit Formal Script", cursive;
+    margin-top: 5px;
+}
+
+#content .info p,
+#content .info h3 {
+    font-family: "Outfit", 'sans serif';
+}
+
+#content .info p {
+    margin: 0;
+}
+
+#content .info iframe{
+    width: 600px;
+    max-width: 90%;
+}
+
+#content .info .akad {
+    border-right: 0.5px solid white;
+}
+
+#content .info .resepsi {
+    border-left: 0.5px solid white;
+}
+
+#content .comment {
+    background-image: url('../img/bg/—Pngtree—pastel\ texture\ watercolor\ shading\ blue_15153267.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Outfit', 'sans serif';
+}
+
+
+#content .comment h1 {
+    padding-top: 20px;
+    font-family: 'Imperial Script', cursive;
+    font-weight: bold;
+    font-size: var(--h1);
+}
+
+#content .comment .message {
+    width: 80%;
+}
+
+#content .comment .btn{
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    margin-bottom: 20px;
+}
+
+#content .comment .btn:hover {
+    border: 1px solid black !important;
+}
+
+#content .comment .message input,
+#content .comment .message textarea {
+    border: 0;
+    border-top: 3px solid black;
+    background-color: transparent;
+    width: 100%;
+    transition: border 1s ease;
+}
+
+#content .comment .container{
+    height: 400px;
+    overflow: auto;
+}
+
+#content .comment h2{
+    font-size: 2rem;
+    font-family: 'Bentham';
+}
+
+#content .comment h5{
+    font-family: 'Bentham';
+}
+
+#content .comment p{
+    font-size: 0.9rem;
+}
+
+#content .comment .comment-item {
+    padding: 0 10px 0 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#content .comment .carousel-item {
+    padding: 10px;
+}
+
+#content .comment .carousel-indicators-custom {
+    position: static;
+    margin-top: 10px;
+}
+
+#content .comment .carousel-indicators-custom li {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    text-align: center;
+    line-height: 30px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+#content .comment .carousel-indicators-custom li.active {
+    background-color: #0056b3;
+}
+
+#music-button {
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    border-radius: 30%;
+    background-color: bisque;
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in, box-shadow 0.2s ease-out;
+}
+
+#music-button:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    transform: translateY(-2px);
+    transform: translateX(2px);
+}
+
+#music-button:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    transform: translateY(0px);
+    transform: translateX(0px);
+}
+
+#timer {
+    text-align: center;
+}
+
+#timer .day,
+.hour,
+.minute,
+.second {
+    font-family: "Bentham", serif;
+    font-size: 1rem;
+    padding: 20px;
+    margin: 5px;
+    display: inline;
+}
+
+#timer .day span,
+.hour span,
+.minute span,
+.second span {
+    font-size: 2rem;
+
+}
+
+@media (max-width: 520px) {
+    #hero h1 span {
+        display: block;
+    }
+
+    #cloud-z .cloud-pink,
+    #cloud-z .cloud-pink-1,
+    #cloud-z .cloud-pink-2,
+    #cloud-z .cloud-pink-3,
+    #cloud-z .cloud-pink-4,
+    #cloud-z .cloud-pink-5,
+    #cloud-z .cloud-pink-6,
+    #cloud-z .cloud-pink-7 {
+        height: 55%;
+        position: absolute;
+        bottom: -185px;
+    }
+
+    #cloud-z-1 .cloud-pink,
+    #cloud-z-1 .cloud-pink-1,
+    #cloud-z-1 .cloud-pink-2,
+    #cloud-z-1 .cloud-pink-3,
+    #cloud-z-1 .cloud-pink-4,
+    #cloud-z-1 .cloud-pink-5,
+    #cloud-z-1 .cloud-pink-6 {
+        height: 55%;
+        position: absolute;
+        z-index: -1;
+        bottom: 5px;
+    }
+
+    #content .home h1,
+    #content .info h1,
+    #content .comment h1 {
+        font-size: var(--h1-small);
+    }
+
+    #content .home #sofia h2,
+    #content .home #ikhsan h2 {
+        font-size: 2.7rem;
+        font-weight: bold;
+    }
+
+    #content .home p {
+        font-size: 0.7rem;
+    }
+
+    #content .home h4 {
+        font-size: 0.7rem;
+    }
+
+    #content .home h3 {
+        font-size: 1.2rem;
+    }
+
+    #content .info p {
+        font-size: 0.7rem;
+    }
+
+    #content .info .akad p,
+    #content .info .resepsi p {
+        font-size: 0.7rem;
+    }
+
+    #content .info .resepsi h3,
+    #content .info .akad h3 {
+        border-left: 0.5px solid white;
+        font-size: 0.9rem;
+    }
+
+    #timer .day,
+    .hour,
+    .minute,
+    .second {
+        font-family: "Bentham", serif;
+        font-size: 0.7rem;
+        padding: 10px;
+        margin: 0px;
+        display: inline;
+    }
+
+    #timer .day span,
+    .hour span,
+    .minute span,
+    .second span {
+        font-size: 1.7rem;
+
+    }
+}

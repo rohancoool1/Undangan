@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .parent {
+                width: 300px;
+                position: relative;
+                overflow: visible; /* Agar bawah tetap terlihat */
+            }
+            .child {
+                width: 500px;
+                height: 50px;
+                background-color: lightblue;
+                clip-path: inset(0 100px 0 100px); /* Potong kanan-kiri saja */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="parent">
+            <div class="child">
+                Konten yang panjang melebihi lebar parent ini akan tersembunyi di kanan/kiri, tapi tetap bisa terlihat ke bawah.
+            </div>
+        </div>
+    </body>
+</html>
