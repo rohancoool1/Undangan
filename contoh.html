@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <style>
-            .parent {
-                width: 300px;
-                position: relative;
-                overflow: visible; /* Agar bawah tetap terlihat */
-            }
-            .child {
-                width: 500px;
-                height: 50px;
-                background-color: lightblue;
-                clip-path: inset(0 100px 0 100px); /* Potong kanan-kiri saja */
-            }
-        </style>
-    </head>
-    <body>
-        <div class="parent">
-            <div class="child">
-                Konten yang panjang melebihi lebar parent ini akan tersembunyi di kanan/kiri, tapi tetap bisa terlihat ke bawah.
-            </div>
-        </div>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Iframe</title>
+    <style>
+        .wrapper {
+            position: relative;
+            width: 500px;
+            height: 300px;
+        }
+
+        .iframe-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: auto; /* Memastikan iframe tetap bisa diklik */
+        }
+
+        /* Tambahan: Gunakan pseudo-element agar wrapper tetap terlihat */
+        .wrapper::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(211, 211, 211, 0.548);
+            z-index: 1;
+            pointer-events: none; /* Membuat layer transparan tidak menghalangi */
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <iframe class="iframe-container" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15894.626275921362!2d119.3917879173828!3d-5.158839199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbf1d0dca1cf797%3A0x15a4ebc6aa0744fa!2sUpperHills%20Convention%20Hall!5e0!3m2!1sen!2sid!4v1741937157705!5m2!1sen!2sid" 
+            class="iframe-container">
+        </iframe>
+    </div>
+</body>
 </html>
