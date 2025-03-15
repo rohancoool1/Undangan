@@ -1,0 +1,98 @@
+.cloud-container{
+    background-color: pink;
+    height: 100vh;
+    width: 100vw;
+}
+
+.cloud-front{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.cloud-front :nth-child(1),
+.cloud-front :nth-child(2),
+.cloud-front :nth-child(3),
+.cloud-front :nth-child(4),
+.cloud-front :nth-child(5),
+.cloud-front :nth-child(6),
+.cloud-front :nth-child(7),
+.cloud-front :nth-child(8){
+    position: absolute;
+    height: 70%;
+    bottom: -170px;
+}
+.cloud-front :nth-child(1){
+    right: -90px;
+}
+.cloud-front :nth-child(2){
+    left: -90px;
+}
+.cloud-front :nth-child(3){
+    right: 0px;
+    
+}
+.cloud-front :nth-child(4){
+    right: 50%;
+    
+}
+.cloud-front :nth-child(5){
+    left: -130px;
+}
+.cloud-front :nth-child(6){
+    right: -190px;
+    
+}
+.cloud-front :nth-child(7){
+    left: 30%;
+}
+.cloud-front :nth-child(8){
+    left: 10%;
+}
+
+.cloud-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.cloud-back :nth-child(1),
+.cloud-back :nth-child(2),
+.cloud-back :nth-child(3),
+.cloud-back :nth-child(4),
+.cloud-back :nth-child(5),
+.cloud-back :nth-child(6),
+.cloud-back :nth-child(7),
+.cloud-back :nth-child(8){
+    position: absolute;
+    height: 100%;
+    bottom: -200px;
+}
+.cloud-back :nth-child(1){
+    right: -90px;
+}
+.cloud-back :nth-child(2){
+    left: -90px;
+}
+.cloud-back :nth-child(3){
+    right: 0px;
+    
+}
+.cloud-back :nth-child(4){
+    right: 50%;
+    
+}
+.cloud-back :nth-child(5){
+    left: -130px;
+}
+.cloud-back :nth-child(6){
+    right: -190px;
+    
+}
+.cloud-back :nth-child(7){
+    left: 30%;
+}
+.cloud-back :nth-child(8){
+    left: 10%;
+}
+

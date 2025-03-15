@@ -23,18 +23,67 @@
 
 body {
     color: black;
-    overflow-x: hidden;
+    overflow: hidden;
     width: 100vw;
     margin: 0;
 }
 
-#hero {
+.parallax-wrapper {
+    overflow-y: auto;
+    overflow-x: hidden;
     height: 100vh;
+    width: 100%;
+    perspective: 10px;
+}
+
+.cloud-wrapper{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform-style: preserve-3d;
+}
+
+.cloud-front{
+    transform: translateZ(5px) scale(1.5);
+    bottom: -50px;
+}
+
+.cloud-front.second-cloud{
+    transform: translateZ(1.5px) scale(1);
+    bottom: -290px;
+}
+
+#hero {
+    height: 110vh;
+    width: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+#hero::before {
+    content: "";
+    height: 100%;
+    width: 100%;
     background-image: url('../img/bg/—Pngtree—delicate\ light\ pink\ watercolor\ texture_15231073.png');
     background-position: center;
     background-size: cover;
-    overflow-y: visible;
-    position: relative;
+    position: absolute;
+    transform: translateZ(-20px) scale(4);
+    z-index: -2;
+}
+
+#hero .cloud-back {
+    z-index: -2 !important;
+    transform: translateZ(-10px) scale(2);
+}
+
+#hero .mx-auto {
+    position: absolute !important;
+    z-index: -1 !important;
+    transform: translateZ(-5px) scale(1.5);
 }
 
 #hero h1 {
@@ -69,81 +118,13 @@ body {
     animation: attention 1s infinite;
 }
 
-.cloud-love {
-    width: 50%;
-    position: absolute;
-    left: 40px;
-    top: 1px;
-    z-index: -1;
-}
-
-.cloud-love-2 {
-    width: 50%;
-    position: absolute;
-    right: 10px;
-    top: 20px;
-}
-
-#cloud-z .cloud-pink,
-#cloud-z .cloud-pink-1,
-#cloud-z .cloud-pink-2,
-#cloud-z .cloud-pink-3,
-#cloud-z .cloud-pink-4,
-#cloud-z .cloud-pink-5,
-#cloud-z .cloud-pink-6,
-#cloud-z .cloud-pink-7 {
-    height: 75%;
-    position: absolute;
-    bottom: -200px;
-}
-
-#cloud-z-1 .cloud-pink,
-#cloud-z-1 .cloud-pink-1,
-#cloud-z-1 .cloud-pink-2,
-#cloud-z-1 .cloud-pink-3,
-#cloud-z-1 .cloud-pink-4,
-#cloud-z-1 .cloud-pink-5,
-#cloud-z-1 .cloud-pink-6 {
-    height: 85%;
-    position: absolute;
-    z-index: -1;
-    bottom: 5px;
-}
-
-.cloud-pink {
-    left: 30%;
-}
-
-.cloud-pink-1 {
-    left: 1%;
-}
-
-.cloud-pink-2 {
-    right: 1%;
-}
-
-.cloud-pink-3 {
-    right: 20%;
-}
-
-.cloud-pink-4 {
-    right: -5%;
-}
-
-.cloud-pink-5 {
-    left: -5%;
-}
-
-.cloud-pink-6 {
-    left: 1%;
-}
-
-.cloud-pink-7 {
-    height: 40%;
-    left: -500px;
+#content {
+    padding-top: 200px;
+    position: relative;
 }
 
 #content .home {
+    background-color: white;
     background-image: url('../img/bg/—Pngtree—pastel\ texture\ watercolor\ shading\ blue_15153267.png');
     background-position-x: center;
     background-position-y: bottom;
@@ -206,24 +187,10 @@ body {
     color: white;
     text-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     padding: 20px 5px;
-}
-
-#content .info::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-image: url('../img/bg/—Pngtree—pastel\ texture\ watercolor\ shading\ blue_15153267.png');
-    background-position-y: bottom;
-    background-position-x: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     background-color: black;
-    transform: scaleY(-1);
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-
+    background-image: url('../img/bg/—Pngtree—pastel\ texture\ watercolor\ shading\ blue_15153267.png');
+    background-position: center;
+    background-size: cover;
 }
 
 #content .info h1 {
@@ -248,7 +215,7 @@ body {
     margin: 0;
 }
 
-#content .info .iframe-wrapper{
+#content .info .iframe-wrapper {
     margin: auto;
     width: 600px;
     height: 300px;
@@ -256,7 +223,7 @@ body {
     position: relative;
 }
 
-#content .info .iframe-wrapper::before{
+#content .info .iframe-wrapper::before {
     content: "";
     position: absolute;
     top: 0;
@@ -268,7 +235,7 @@ body {
     box-shadow: rgb(12, 12, 12) 3px 3px 6px 0px inset, rgba(46, 46, 46, 0.5) -3px -3px 6px 1px inset;
 }
 
-#content .info iframe{
+#content .info iframe {
     width: 100%;
     height: 100%;
     pointer-events: auto;
@@ -283,6 +250,7 @@ body {
 }
 
 #content .comment {
+    background-color: white;
     background-image: url('../img/bg/—Pngtree—pastel\ texture\ watercolor\ shading\ blue_15153267.png');
     background-position: top;
     background-repeat: no-repeat;
@@ -302,7 +270,7 @@ body {
     width: 80%;
 }
 
-#content .comment .btn{
+#content .comment .btn {
     border-right: 1px solid black;
     border-left: 1px solid black;
     margin-bottom: 20px;
@@ -321,21 +289,21 @@ body {
     transition: border 1s ease;
 }
 
-#content .comment .container{
+#content .comment .container {
     height: 400px;
     overflow: auto;
 }
 
-#content .comment h2{
+#content .comment h2 {
     font-size: 2rem;
     font-family: 'Bentham';
 }
 
-#content .comment h5{
+#content .comment h5 {
     font-family: 'Bentham';
 }
 
-#content .comment p{
+#content .comment p {
     font-size: 0.9rem;
 }
 
