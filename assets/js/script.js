@@ -24,8 +24,21 @@ var x = setInterval(function () {
 // COUTNDOWN END
 
 // MUSIC BUTTON
-let musicButton = $("#music-button");
+let musicTrigger = true;
 let music = $("#music").get(0);
+
+$('.parallax-wrapper').on("scroll", function () {
+  if(musicTrigger){
+    music.play();
+    musicTrigger = false;
+    musicButton.html("<i class=\"fa-solid fa-pause fa-bounce fa-lg\"></i>");
+  }
+  // document.getElementById("music").play();
+  // var scrollPosition = $('.parallax-wrapper').scrollTop();
+  // console.log("Posisi scroll: " + scrollPosition);
+});
+
+let musicButton = $("#music-button");
 
 musicButton.click(function () {
   if (music.paused) {
@@ -38,3 +51,11 @@ musicButton.click(function () {
 });
 // MUSIC BUTTON END
 
+// WALLET
+
+$("#wallet-card").hide(); 
+$("#wallet-card-btn").click(function(){
+  $("#wallet-card").slideToggle(200); 
+});
+
+// WALLET END

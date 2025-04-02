@@ -3,44 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Iframe</title>
+    <title>Document</title>
     <style>
-        .wrapper {
+        body{
+            margin: 0;
+        }
+        body div:nth-child(1){
+            background-color: pink;
+            height: 100vh;
             position: relative;
-            width: 500px;
-            height: 300px;
         }
-
-        .iframe-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-            pointer-events: auto; /* Memastikan iframe tetap bisa diklik */
+        body div:nth-child(2){
+            height: 100vh;
+            background-color: rgb(218, 130, 145);
         }
-
-        /* Tambahan: Gunakan pseudo-element agar wrapper tetap terlihat */
-        .wrapper::before {
-            content: "";
+        img{
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(211, 211, 211, 0.548);
-            z-index: 1;
-            pointer-events: none; /* Membuat layer transparan tidak menghalangi */
+            bottom: -200px;
+            left: -150px;
+            width: 150%;
         }
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <iframe class="iframe-container" 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15894.626275921362!2d119.3917879173828!3d-5.158839199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbf1d0dca1cf797%3A0x15a4ebc6aa0744fa!2sUpperHills%20Convention%20Hall!5e0!3m2!1sen!2sid!4v1741937157705!5m2!1sen!2sid" 
-            class="iframe-container">
-        </iframe>
+    <div>
+        <img src="./assets/img/assets/cloud.png" alt="">
     </div>
+    
+    <div></div>
 </body>
 </html>
