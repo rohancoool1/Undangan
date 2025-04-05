@@ -1,35 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body{
-            margin: 0;
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+        @keyframes infiniteScroll {
+            to{
+                left: calc((var(--width) * 1px) * -1);
+            }
         }
-        body div:nth-child(1){
-            background-color: pink;
-            height: 100vh;
+        .slider{
+            width: 100%;
+            height: calc(var(--height) * 1px) ;
+            border: 1px solid black;
+            margin-inline: auto;
             position: relative;
         }
-        body div:nth-child(2){
-            height: 100vh;
-            background-color: rgb(218, 130, 145);
+        .slider .list{
+            width: 100%;
+            height: 100%;
         }
-        img{
+        .slider .list .item{
+            width: calc(var(--width) * 1px);
+            height: calc(var(--height) * 1px);
             position: absolute;
-            bottom: -200px;
-            left: -150px;
-            width: 150%;
+            left: calc(var(--width) * var(--quantity) * 1px);
+            animation: infiniteScroll calc(var(--duration)*1s) linear infinite;
+            animation-delay: calc((var(--duration)*1s) / var(--quantity) * (var(--quantity) - var(--position)) * -1);
         }
-    </style>
-</head>
-<body>
-    <div>
-        <img src="./assets/img/assets/cloud.png" alt="">
-    </div>
-    
-    <div></div>
-</body>
+        .slider .list .item img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="slider" reserve="false" style="--width:200; --height:200; --duration: 30;">
+            <div class="list">
+                <div class="item">
+                    <img src="./assets/img/ikhsan & sofia/ikhsansofia (1).jpg" alt="images">
+                </div>
+                <div class="item">
+                    <img src="./assets/img/ikhsan & sofia/ikhsansofia (2).jpg" alt="images">
+                </div>
+                <div class="item">
+                    <img src="./assets/img/ikhsan & sofia/ikhsansofia (3).jpg" alt="images">
+                </div>
+                <div class="item">
+                    <img src="./assets/img/ikhsan & sofia/ikhsansofia (4).jpg" alt="images">
+                </div>
+                <div class="item">
+                    <img src="./assets/img/ikhsan & sofia/ikhsansofia (5).jpg" alt="images">
+                </div>
+                <div class="item">
+                    <img src="./assets/img/ikhsan & sofia/ikhsansofia (6).jpg" alt="images">
+                </div>
+                <div class="item">
+                    <img src="./assets/img/ikhsan & sofia/ikhsansofia (7).jpg" alt="images">
+                </div>
+            </div>
+        </div>
+        <script src="./vendors/jquery/jquery-3.7.1.min.js"></script>
+        <script src="./assets/js/script.js"></script>
+    </body>
 </html>

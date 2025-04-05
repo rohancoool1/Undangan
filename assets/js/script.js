@@ -28,7 +28,7 @@ let musicTrigger = true;
 let music = $("#music").get(0);
 
 $('.parallax-wrapper').on("scroll", function () {
-  if(musicTrigger){
+  if (musicTrigger) {
     music.play();
     musicTrigger = false;
     musicButton.html("<i class=\"fa-solid fa-pause fa-bounce fa-lg\"></i>");
@@ -53,9 +53,30 @@ musicButton.click(function () {
 
 // WALLET
 
-$("#wallet-card").hide(); 
-$("#wallet-card-btn").click(function(){
-  $("#wallet-card").slideToggle(200); 
+$("#wallet-card").hide();
+$("#wallet-card-btn").click(function () {
+  $("#wallet-card").slideToggle(200);
 });
 
 // WALLET END
+
+// GALLERY
+
+$(document).ready(function () {
+  let count = $(".slider[reserve='false'] .list").children().length;
+  $('.slider').css('--quantity', count);
+  // console.log("Jumlah anak langsung: " + $('.slider').css('--quantity'));
+  for (let i = 0; i < count; i++) {
+    $(".slider[reserve='false'] .list").children().eq(i).css("--position", i + 1);
+    // console.log("Anak ke-" + (i + 1) + ": " + $(".slider[reserve='false'] .list").children().eq(i).css("--position"));
+  }
+  let countReserve = $(".slider[reserve='true'] .list").children().length;
+  $('.slider').css('--quantity', countReserve);
+  // console.log("Jumlah anak langsung: " + countReserve);
+  for (let i = 0; i < countReserve; i++) {
+    $(".slider[reserve='true'] .list").children().eq(i).css("--position", i + 1);
+    // console.log("Anak ke-" + (i + 1) + ": " + $(".slider[reserve='true'] .list").children().eq(i).css("--position"));
+  }
+});
+
+// END GALLERY
