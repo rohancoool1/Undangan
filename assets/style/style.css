@@ -454,7 +454,7 @@ body {
     left: 100%;
     transition: filter 0.2s ease-in-out;
     animation: autoRun calc(var(--duration)*1s) linear infinite;
-    animation-delay: calc((calc(var(--duration)*1s) / var(--quantity)) * (var(--position) - 1)) !important;
+    animation-delay: calc((var(--duration)*1s) / var(--quantity) * (var(--quantity) - var(--position)) * -1) !important;
 }
 
 #content .gallery .slider[reserve="true"] .list .item {
@@ -474,7 +474,7 @@ body {
 }
 
 #content .gallery .slider .list .item:hover {
-    filter: grayscale(0 );
+    filter: grayscale(0);
 }
 
 #content .comment {

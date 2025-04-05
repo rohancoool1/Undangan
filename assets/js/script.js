@@ -62,22 +62,21 @@ $("#wallet-card-btn").click(function () {
 
 // GALLERY
 
-$(document).ready(function () { 
-    let count = $(".slider[reserve='false'] .list").children().length;
-    $('html').css('--quantity', count);
-    // console.log("Jumlah anak langsung: " + count);
-    for (let i = 0; i < count; i++) {
-      $(".slider[reserve='false'] .list").children().eq(i).css("--position", i + 1);
+$(document).ready(function () {
+  let count = $(".slider[reserve='false'] .list").children().length;
+  $('.slider').css('--quantity', count);
+  // console.log("Jumlah anak langsung: " + $('.slider').css('--quantity'));
+  for (let i = 0; i < count; i++) {
+    $(".slider[reserve='false'] .list").children().eq(i).css("--position", i + 1);
     // console.log("Anak ke-" + (i + 1) + ": " + $(".slider[reserve='false'] .list").children().eq(i).css("--position"));
   }
-    let countReserve = $(".slider[reserve='true'] .list").children().length;
-    $('html').css('--quantity', countReserve);
-    // console.log("Jumlah anak langsung: " + countReserve);
-    for (let i = 0; i < countReserve; i++) {
-      $(".slider[reserve='true'] .list").children().eq(i).css("--position", i + 1);
+  let countReserve = $(".slider[reserve='true'] .list").children().length;
+  $('.slider').css('--quantity', countReserve);
+  // console.log("Jumlah anak langsung: " + countReserve);
+  for (let i = 0; i < countReserve; i++) {
+    $(".slider[reserve='true'] .list").children().eq(i).css("--position", i + 1);
     // console.log("Anak ke-" + (i + 1) + ": " + $(".slider[reserve='true'] .list").children().eq(i).css("--position"));
   }
 });
-
 
 // END GALLERY
