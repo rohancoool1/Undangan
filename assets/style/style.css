@@ -4,7 +4,6 @@
     --pink: #fd33b0;
     --h1: 5rem;
     --h1-small: 3.5rem;
-
 }
 
 @-webkit-keyframes appear {
@@ -33,6 +32,26 @@
     }
 }
 
+@keyframes autoRun {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: calc((var(--width) * 1px) * -1);
+    }
+}
+
+@keyframes autoRunRerve {
+    from {
+        left: calc((var(--width) * 1px) * -1);
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
 body {
     color: black;
     overflow: hidden;
@@ -46,6 +65,7 @@ body {
     height: 100vh;
     width: 100%;
     perspective: 10px;
+    transform-style: preserve-3d;
 }
 
 .cloud-wrapper {
@@ -59,22 +79,43 @@ body {
 }
 
 .cloud-front {
-    transform: translateZ(5px) scale(1.5);
-    bottom: -50px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: translateZ(5px) scale(1);
 }
 
-.cloud-front.second-cloud {
+.cloud-front img {
+    position: absolute;
+    width: 130%;
+    bottom: -45%;
+    left: -150px;
+}
+
+.cloud-trans {
+    position: absolute;
+    height: 100%;
+    width: 100%;
     transform: translateZ(1.5px) scale(1);
-    bottom: -300px;
+}
+
+.cloud-trans img {
+    position: absolute;
+    height: 70%;
+    left: -120px;
+    bottom: -200px;
 }
 
 #hero .cloud-back {
-    z-index: -2 !important;
-    transform: translateZ(-10px) scale(2);
+    position: absolute;
+    height: 100%;
+    bottom: -200px;
+    z-index: -1;
+    transform: translateZ(-5px) scale(1.5);
 }
 
 #hero {
-    height: 110vh;
+    height: 100vh;
     width: 100%;
     position: relative;
     transform-style: preserve-3d;
@@ -125,13 +166,14 @@ body {
 }
 
 #content {
-    margin-top: 200px;
     position: relative;
     width: 100%;
     background-color: white;
-    background-image: url('../img/bg/—Pngtree—pastel\ texture\ watercolor\ shading\ blue_15153267.png');
+    background-image: url('../img/bg/Free\ Vector\ _\ Hand\ painted\ watercolor\ pastel\ sky\ background.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
     transform-style: preserve-3d;
 }
 
@@ -199,15 +241,16 @@ body {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     /* Untuk dukungan browser Webkit */
-    background: rgba(185, 185, 185, 0.13);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.582);
+    border: 1px solid rgba(255, 255, 255, 0.274);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 
 #content .info {
+    color: white;
     text-align: center;
-    padding: 20px 5px;
+    padding: 20px 0px;
     margin-left: 50px;
     margin-right: 50px;
     transform: translateZ(1px) scale(0.9);
@@ -216,7 +259,7 @@ body {
 #content .info h1 {
     font-family: "Imperial Script", cursive;
     font-size: var(--h1);
-    font-weight: bold;
+    font-weight: lighter;
     width: fit-content;
     margin: auto;
 }
@@ -373,7 +416,7 @@ body {
 }
 
 #content .gallery {
-    padding: 50px;
+    padding: 0 50px;
     margin: 0 50px;
     transform: translateZ(1px) scale(0.9);
 }
@@ -386,30 +429,53 @@ body {
     margin: auto;
 }
 
-#content .gallery .image-container::after {
-    /* height: 200px; */
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.image-container img{
-    width: 30%;
-    float: left;
-    margin: 10px;
-}
-
-/* .image-container > div {
-    background-size: cover;
-    background-position: center;
-    aspect-ratio: 1;
-}
-
-.image-container > div > img{
+#content .gallery .slider {
+    height: calc(var(--height)*1px);
     width: 100%;
-    height: auto;
-} */
+    mask-image: linear-gradient(to right,
+            transparent,
+            #000 5% 90%,
+            transparent);
+    margin: 20px 0;
+}
 
+#content .gallery .slider .list {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    min-width: calc((var(--width)*1px) * var(--quantity));
+    position: relative;
+}
+
+#content .gallery .slider .list .item {
+    height: calc(var(--height)*1px);
+    width: calc(var(--width)*1px);
+    position: absolute;
+    left: 100%;
+    transition: filter 0.2s ease-in-out;
+    animation: autoRun calc(var(--duration)*1s) linear infinite;
+    animation-delay: calc((calc(var(--duration)*1s) / var(--quantity)) * (var(--position) - 1)) !important;
+}
+
+#content .gallery .slider[reserve="true"] .list .item {
+    animation: autoRunRerve calc(var(--duration)*1s) linear infinite;
+}
+
+#content .gallery .slider .list .item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+#content .gallery .slider:hover .list .item {
+    animation-play-state: paused !important;
+    filter: grayscale(1);
+}
+
+#content .gallery .slider .list .item:hover {
+    filter: grayscale(0 );
+}
 
 #content .comment {
     /* transform: translateZ(1px) scale(0.9); */
@@ -573,30 +639,16 @@ body {
         display: block;
     }
 
-    #cloud-z .cloud-pink,
-    #cloud-z .cloud-pink-1,
-    #cloud-z .cloud-pink-2,
-    #cloud-z .cloud-pink-3,
-    #cloud-z .cloud-pink-4,
-    #cloud-z .cloud-pink-5,
-    #cloud-z .cloud-pink-6,
-    #cloud-z .cloud-pink-7 {
-        height: 55%;
-        position: absolute;
-        bottom: -185px;
+    .cloud-trans img {
+        height: 300px;
+        bottom: -150px;
     }
 
-    #cloud-z-1 .cloud-pink,
-    #cloud-z-1 .cloud-pink-1,
-    #cloud-z-1 .cloud-pink-2,
-    #cloud-z-1 .cloud-pink-3,
-    #cloud-z-1 .cloud-pink-4,
-    #cloud-z-1 .cloud-pink-5,
-    #cloud-z-1 .cloud-pink-6 {
-        height: 55%;
-        position: absolute;
-        z-index: -1;
-        bottom: 5px;
+    .cloud-front img {
+        bottom: -25%;
+        width: 150%;
+        /* bottom: -550px; */
+        /* left: -200px; */
     }
 
     #content .home h1,
@@ -649,6 +701,16 @@ body {
     #content .info h4 {
         font-size: 0.7rem;
         font-weight: 300;
+    }
+
+    #content .gallery {
+        padding: 0;
+        margin: 0;
+    }
+
+    #content .gallery .slider {
+        --width: 150 !important;
+        --height: 150 !important;
     }
 
     #timer .day,

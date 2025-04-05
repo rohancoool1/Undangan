@@ -5,31 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-            margin: 0;
+        @keyframes autoRun {
+            from{
+                left: 100%;
+            }
+            to{
+                left: calc(var(--width) * -1);
+            }
         }
-        body div:nth-child(1){
-            background-color: pink;
-            height: 100vh;
+        .slider{
+            margin: auto;
+            width: 50%;
+            height: var(--height);
+            border: 1px solid black;
+        }
+        .slider .list{
+            display: flex;
+            width: 100%;
+            min-width: calc(var(--width) * var(--quantity));
+            height: 100%;
             position: relative;
         }
-        body div:nth-child(2){
-            height: 100vh;
-            background-color: rgb(218, 130, 145);
-        }
-        img{
+        .slider .list .item{
+            width: var(--width);
+            height: var(--height);
             position: absolute;
-            bottom: -200px;
-            left: -150px;
-            width: 150%;
+            left: 100%;
+            animation: autoRun 10s linear infinite;
+            animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1));
+        }
+        .slider .list .item img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     </style>
 </head>
 <body>
-    <div>
-        <img src="./assets/img/assets/cloud.png" alt="">
+    <div class="slider" style="--width: 300px; --height: 300px; --quantity: 7;">
+        <div class="list">  
+            <div class="item" style="--position: 1;"><img src="./assets/img/ikhsan & sofia/ikhsansofia (1).jpg" alt=""></div>
+            <div class="item" style="--position: 2;"><img src="./assets/img/ikhsan & sofia/ikhsansofia (2).jpg" alt=""></div>
+            <div class="item" style="--position: 3;"><img src="./assets/img/ikhsan & sofia/ikhsansofia (3).jpg" alt=""></div>
+            <div class="item" style="--position: 4;"><img src="./assets/img/ikhsan & sofia/ikhsansofia (4).jpg" alt=""></div>
+            <div class="item" style="--position: 5;"><img src="./assets/img/ikhsan & sofia/ikhsansofia (5).jpg" alt=""></div>
+            <div class="item" style="--position: 6;"><img src="./assets/img/ikhsan & sofia/ikhsansofia (6).jpg" alt=""></div>
+            <div class="item" style="--position: 7;"><img src="./assets/img/ikhsan & sofia/ikhsansofia (7).jpg" alt=""></div>
+        </div>
     </div>
-    
-    <div></div>
 </body>
 </html>
