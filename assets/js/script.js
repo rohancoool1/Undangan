@@ -67,16 +67,17 @@ $(document).ready(function () {
   $('.slider').css('--quantity', count);
   // console.log("Jumlah anak langsung: " + $('.slider').css('--quantity'));
   for (let i = 0; i < count; i++) {
-    $(".slider[reserve='false'] .list").children().eq(i).css("--position", i + 1);
+    $(".slider .list").children().eq(i).css("--position", i + 1);
     // console.log("Anak ke-" + (i + 1) + ": " + $(".slider[reserve='false'] .list").children().eq(i).css("--position"));
   }
   let countReserve = $(".slider[reserve='true'] .list").children().length;
-  $('.slider').css('--quantity', countReserve);
-  // console.log("Jumlah anak langsung: " + countReserve);
   for (let i = 0; i < countReserve; i++) {
     $(".slider[reserve='true'] .list").children().eq(i).css("--position", i + 1);
-    // console.log("Anak ke-" + (i + 1) + ": " + $(".slider[reserve='true'] .list").children().eq(i).css("--position"));
   }
+
+  $(".slider[reserve='true']").css("--duration", $(".slider[reserve='false']").css("--duration"));
+  $(".slider[reserve='true']").css("--width", $(".slider[reserve='false']").css("--width"));
+  $(".slider[reserve='true']").css("--height", $(".slider[reserve='false']").css("--height"));
 });
 
 // END GALLERY

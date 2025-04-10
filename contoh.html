@@ -1,68 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <style>
-        @keyframes infiniteScroll {
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes damn {
             to{
-                left: calc((var(--width) * 1px) * -1);
+                height: 130%;
             }
         }
-        .slider{
-            width: 100%;
-            height: calc(var(--height) * 1px) ;
-            border: 1px solid black;
-            margin-inline: auto;
+        section.ini{
+            border: 1px solid green;
+            /* overflow: hidden; */
+            background-color: green;
             position: relative;
         }
-        .slider .list{
-            width: 100%;
-            height: 100%;
+        section > section{
+            height: 300px;
+            border: 1px solid black;
         }
-        .slider .list .item{
-            width: calc(var(--width) * 1px);
-            height: calc(var(--height) * 1px);
+        section.ini::before{
+            content: '';
             position: absolute;
-            left: calc(var(--width) * var(--quantity) * 1px);
-            animation: infiniteScroll calc(var(--duration)*1s) linear infinite;
-            animation-delay: calc((var(--duration)*1s) / var(--quantity) * (var(--quantity) - var(--position)) * -1);
+            width: 2px;
+            top: 0;
+            bottom: 0;
+            height: 0;
+            animation: damn linear;
+            animation-timeline: scroll();
+            background-color: black;
+            left: 50%;
         }
-        .slider .list .item img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        </style>
-    </head>
-    <body>
-        <div class="slider" reserve="false" style="--width:200; --height:200; --duration: 30;">
-            <div class="list">
-                <div class="item">
-                    <img src="./assets/img/ikhsan & sofia/ikhsansofia (1).jpg" alt="images">
-                </div>
-                <div class="item">
-                    <img src="./assets/img/ikhsan & sofia/ikhsansofia (2).jpg" alt="images">
-                </div>
-                <div class="item">
-                    <img src="./assets/img/ikhsan & sofia/ikhsansofia (3).jpg" alt="images">
-                </div>
-                <div class="item">
-                    <img src="./assets/img/ikhsan & sofia/ikhsansofia (4).jpg" alt="images">
-                </div>
-                <div class="item">
-                    <img src="./assets/img/ikhsan & sofia/ikhsansofia (5).jpg" alt="images">
-                </div>
-                <div class="item">
-                    <img src="./assets/img/ikhsan & sofia/ikhsansofia (6).jpg" alt="images">
-                </div>
-                <div class="item">
-                    <img src="./assets/img/ikhsan & sofia/ikhsansofia (7).jpg" alt="images">
-                </div>
-            </div>
-        </div>
-        <script src="./vendors/jquery/jquery-3.7.1.min.js"></script>
-        <script src="./assets/js/script.js"></script>
-    </body>
+    </style>
+</head>
+<body>
+    <section class="ini">
+        <section></section>
+        <section></section>
+        <section></section>
+    </section>
+</body>
 </html>
