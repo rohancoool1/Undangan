@@ -81,3 +81,27 @@ $(document).ready(function () {
 });
 
 // END GALLERY
+
+// COPY WALLET
+
+function copyText() {
+  let textWallet = document.getElementById("text-wallet");
+  let copyWallet = document.getElementById("copy-wallet");
+  copyWallet.value = textWallet.innerText;
+  copyWallet.select();
+  copyWallet.setSelectionRange(0, 99999); // For mobile devices
+  navigator.clipboard.writeText(copyWallet.value);
+  alert("Copied the text: " + copyWallet.value);
+}
+
+function copyText2() {
+  let textWallet = document.getElementById("text-wallet2");
+  let copyWallet = document.getElementById("copy-wallet2");
+  copyWallet.value = textWallet.innerText;
+  copyWallet.select();
+  copyWallet.setSelectionRange(0, 99999); // For mobile devices
+  navigator.clipboard.writeText(copyWallet.value);
+  alert("Copied the text: " + copyWallet.value);
+}
+
+// COPY WALLET END
