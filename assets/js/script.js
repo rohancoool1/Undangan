@@ -1,3 +1,13 @@
+// SCROLL LOCK
+$("#lick-me").click(function () {
+  $(".parallax-wrapper").css("overflow-y", "auto");
+  $(".parallax-wrapper").animate({
+    scrollTop: $("#content").offset().top
+  }, 1000); // 1000 adalah durasi dalam milidetik (1 detik)
+
+});
+// SCROLL LOCK END
+
 // COUNTDOWN
 // var countDownDate = new Date("Apr 12, 2025 14:37:25").getTime();
 date = [$("#month").text(), $("#day").text(), ",", $("#year").text(), "14:37:25"].join(" ");
@@ -84,24 +94,31 @@ $(document).ready(function () {
 
 // COPY WALLET
 
-function copyText() {
+function copyText(event) {
   let textWallet = document.getElementById("text-wallet");
   let copyWallet = document.getElementById("copy-wallet");
   copyWallet.value = textWallet.innerText;
   copyWallet.select();
   copyWallet.setSelectionRange(0, 99999); // For mobile devices
   navigator.clipboard.writeText(copyWallet.value);
-  alert("Copied the text: " + copyWallet.value);
+  event.target.innerText = "copied";
+  setTimeout(() => {
+    event.target.innerText = "copy";
+  }, 3000);
+
 }
 
-function copyText2() {
+function copyText2(event) {
   let textWallet = document.getElementById("text-wallet2");
   let copyWallet = document.getElementById("copy-wallet2");
   copyWallet.value = textWallet.innerText;
   copyWallet.select();
   copyWallet.setSelectionRange(0, 99999); // For mobile devices
   navigator.clipboard.writeText(copyWallet.value);
-  alert("Copied the text: " + copyWallet.value);
+  event.target.innerText = "copied";
+  setTimeout(() => {
+    event.target.innerText = "copy";
+  }, 3000);
 }
 
 // COPY WALLET END

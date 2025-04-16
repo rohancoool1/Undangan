@@ -32,6 +32,20 @@
     }
 }
 
+@keyframes attention-hover {
+
+    0%,
+    100% {
+        opacity: 1;
+        /* transform: scale(1); */
+    }
+
+    50% {
+        /* opacity: 0.6; */
+        color: pink;
+    }
+}
+
 @keyframes autoRun {
     from {
         left: 100%;
@@ -79,7 +93,7 @@ body {
 }
 
 .parallax-wrapper {
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
     height: 100vh;
     width: 100%;
@@ -93,6 +107,7 @@ body {
     position: absolute;
     z-index: 1;
     transform-style: preserve-3d;
+    pointer-events: none;
 }
 
 .cloud-front {
@@ -154,11 +169,21 @@ body {
     font-size: 0.7rem;
 }
 
-#hero p {
+#hero button {
+    border: 0;
+    background-color: transparent;
     font-size: 0.7rem;
     font-family: "Bentham", serif;
     font-weight: bold;
     animation: attention 1s infinite;
+    transform: scale(1);
+    border-radius: 5px;
+}
+
+#hero button:hover{
+    animation: none;
+    outline: 2px solid black;
+    animation: attention-hover 0.3s infinite;
 }
 
 #content {
@@ -221,8 +246,8 @@ body {
     font-family: 'Outfit', 'sans-serif';
 }
 
-#content .home #ikhsan img,
-#sofia img {
+#content .home #groom img,
+#bride img {
     width: 100%;
     margin: 0;
 }
@@ -231,12 +256,12 @@ body {
     font-size: 2rem;
 }
 
-#content .home #ikhsan h2 {
+#content .home #groom h2 {
     color: var(--blue);
 
 }
 
-#content .home #sofia h2 {
+#content .home #bride h2 {
     color: var(--pink);
 }
 
@@ -245,11 +270,7 @@ body {
     color: white;
     text-align: center;
     padding: 50px 0;
-    /* margin-left: 50px;
-    margin-right: 50px; */
     transform: translateZ(2px) scale(0.8);
-    /* border-bottom: 15px solid #c9057e; */
-    /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
 }
 
 #content .info::before {
@@ -283,6 +304,7 @@ body {
     height: 300px;
     max-width: 100%;
     position: relative;
+    pointer-events: none;
 }
 
 #content .info .iframe-wrapper::before {
@@ -367,7 +389,6 @@ body {
     font-family: "Space Mono", monospace;
     font-weight: 400;
     font-size: 0.8rem;
-    float: left;
     padding: 15px;
 }
 
@@ -381,7 +402,7 @@ body {
     display: table;
 }
 
-#content .info .wallet-card-header button:nth-child(1) {
+#content .info .wallet-card-header button {
     float: left;
     /* margin: 5px 10px;     */
     background-color: rgba(255, 255, 255, 0.664);
@@ -392,9 +413,10 @@ body {
     border: 0;
 }
 
-#content .info .wallet-card-header button:nth-child(1):hover {
+#content .info .wallet-card-header button:hover {
     background-color: rgb(255, 255, 255);
 }
+
 
 #content .info .wallet-card-header p:nth-child(2) {
     margin: 5px 10px;
@@ -610,35 +632,41 @@ body {
 }
 
 #content .comment {
-    padding: 25px !important;
+    padding: 30px;
     /* transform: translateZ(1px) scale(0.9); */
     font-family: 'Outfit', 'sans serif';
+    color: white;
+    position: relative;
+}
+
+#content .comment::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* Untuk dukungan browser Webkit */
+    background: #1f1e1e;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 #content .comment .message {
-    /* background-color: #fc3477; */
     border-radius: 10px;
-    /* border: 2px solid var(--pink); */
-    /* backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); */
     width: 100%;
     margin: 0 !important;
 }
-
-/* #content .comment .message form{
-    width: 50%;
-    margin: auto !important;
-    background-color: pink;
-    border-radius: 5px;
-    margin-top: 2rem;
-    padding: 2rem;
-} */
 
 #content .comment .message input,
 #content .comment .message span,
 #content .comment .message label,
 #content .comment .message button,
-#content .comment .message textarea {
+#content .comment .message textarea,
+#content .comment .message textarea::placeholder,
+#content .comment .message input::placeholder {
     /* font-family: 'Bentham', sans-serif; */
     font-family: 'Outfit', 'sans serif';
     display: block;
@@ -648,6 +676,7 @@ body {
     background-color: transparent;
     width: 100%;
     font-size: 1rem;
+    color: white;
 }
 
 #content .comment .message button {
@@ -663,7 +692,7 @@ body {
     /* transition: outline 0.1s ease-in-out; */
     margin: 0;
     padding: 0;
-    border: 1px solid rgba(0, 0, 0, 0.527);
+    border: 1px solid rgba(255, 255, 255, 0.527);
     width: fit-content;
     padding: 7px;
     border-radius: 5px;
@@ -692,9 +721,14 @@ body {
 }
 
 #content .close {
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
     padding: 2rem;
     text-align: center;
+    background-color: rgb(51, 34, 47);
+    color: white;
+}
+#content .close h3, h2{
+    font-weight: lighter !important;
 }
 
 #music-button {
@@ -751,11 +785,11 @@ body {
     }
 
     .cloud-front.first-cloud{
-        bottom: 110px;
+        bottom: 140px;
     }
     
     .cloud-front.first-cloud img{
-        width: 700px !important;
+        width: 650px !important;
         height: auto !important;
     }
     
@@ -772,22 +806,8 @@ body {
         display: block;
     }
 
-    .cloud-trans img {
-        height: 300px;
-        bottom: -150px;
-    }
-
-    .cloud-front img {
-        bottom: -400px;
-        width: 1600px
-            /* left: -30px; */
-            /* bottom: -550px; */
-            /* left: -200px; */
-    }
-
-
-    #content .home #sofia h2,
-    #content .home #ikhsan h2 {
+    #content .home #bride h2,
+    #content .home #groom h2 {
         font-size: 2.7rem;
         font-weight: bold;
     }
