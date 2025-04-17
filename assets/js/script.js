@@ -28,7 +28,7 @@ var x = setInterval(function () {
 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
+    document.getElementById("timer").innerHTML = "<h3><b style='color: red;'>Acara telah selesai</b></h3>";
   }
 }, 1000);
 // COUTNDOWN END

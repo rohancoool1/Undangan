@@ -79,6 +79,27 @@ body {
     margin: 0;
 }
 
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset;
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: pink;
+    border-radius: 50% 20% 40% 50%;
+}
+
+/* Handle on hover */   
+::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+}
+
 .divider {
     width: 100%;
     display: flex;
@@ -180,9 +201,15 @@ body {
     border-radius: 5px;
 }
 
-#hero button:hover{
+#hero button:hover {
     animation: none;
-    outline: 2px solid black;
+    /* outline: 2px solid black; */
+    animation: attention-hover 0.3s infinite;
+}
+
+#hero button:active {
+    animation: none;
+    /* outline: 2px solid black; */
     animation: attention-hover 0.3s infinite;
 }
 
@@ -724,11 +751,13 @@ body {
     /* margin-top: 3rem; */
     padding: 2rem;
     text-align: center;
-    background-color: rgb(51, 34, 47);
-    color: white;
+    background-color: #d6d6d6;
+    color: black;
 }
-#content .close h3, h2{
-    font-weight: lighter !important;
+
+#content .close h3,
+h2 {
+    /* font-weight: lighter !important; */
 }
 
 #music-button {
@@ -784,20 +813,20 @@ body {
         width: 150;
     }
 
-    .cloud-front.first-cloud{
+    .cloud-front.first-cloud {
         bottom: 140px;
     }
-    
-    .cloud-front.first-cloud img{
+
+    .cloud-front.first-cloud img {
         width: 650px !important;
         height: auto !important;
     }
-    
-    .cloud-front.second-cloud{
+
+    .cloud-front.second-cloud {
         bottom: 20px;
     }
 
-    .cloud-front.second-cloud img{
+    .cloud-front.second-cloud img {
         width: 500px !important;
         height: auto;
     }
