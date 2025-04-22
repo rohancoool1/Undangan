@@ -346,6 +346,7 @@ $(document).ready(function () {
   let count = $(".slider[reserve='false'] .list").children().length;
   $('.slider').css('--quantity', count);
   // console.log("Jumlah anak langsung: " + $('.slider').css('--quantity'));
+  
   for (let i = 0; i < count; i++) {
     $(".slider .list").children().eq(i).css("--position", i + 1);
     // console.log("Anak ke-" + (i + 1) + ": " + $(".slider[reserve='false'] .list").children().eq(i).css("--position"));
