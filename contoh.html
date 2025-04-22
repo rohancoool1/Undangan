@@ -1,44 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        @keyframes damn {
-            to{
-                height: 130%;
-            }
-        }
-        section.ini{
-            border: 1px solid green;
-            /* overflow: hidden; */
-            background-color: green;
-            position: relative;
-        }
-        section > section{
-            height: 300px;
-            border: 1px solid black;
-        }
-        section.ini::before{
-            content: '';
-            position: absolute;
-            width: 2px;
-            top: 0;
-            bottom: 0;
-            height: 0;
-            animation: damn linear;
-            animation-timeline: scroll();
-            background-color: black;
-            left: 50%;
-        }
-    </style>
-</head>
-<body>
-    <section class="ini">
-        <section></section>
-        <section></section>
-        <section></section>
-    </section>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div style="width: 100%">
+            <div style="overflow:hidden;max-width:100%;width:500px;height:500px;">
+                <div id="my-map-display" style="height:100%; width:100%;max-width:100%;">
+                    <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=UpperHills+Convention+Hall&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+                </div>
+                <a class="embed-map-html" href="https://www.bootstrapskins.com/themes" id="grab-map-data">premium bootstrap themes</a>
+                <style>#my-map-display img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style>
+            </div>
+        </div>
+    </body>
 </html>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,7 @@
         <!-- Local -->
         <link rel="stylesheet" href="./assets/style/style.css">
         <link rel="stylesheet" href="./assets/style/cloud.css">
-        <title>Ikhsan & Sofia</title>
+        <title>Ur Name</title>
     </head>
     <body>
         <div class="parallax-wrapper">
@@ -53,20 +53,33 @@
                     <img src="./assets/img/assets/image-from-rawpixel-id-6119594-png.png" alt="">
                 </div>
                 <main class="mx-auto">
-                    <h2 class="mb-3">Boy's of PPM</h2>
+                    <h2 class="mb-3">&lt;tamu undangan&gt;</h2>
                     <h5>Kepada Yth Bpk/Ibu/Sdr/i</h5>
                     <h5>Yang disebutkan untuk menghadiri Undangan Pernikahan</h5>
                     <h1 class="mb-3">
-                        <span>Ikhsan</span>
+                        <input
+                            type="text"
+                            placeholder="Kamu"
+                            size="1"
+                            autocomplete="off"
+                        >
+                        <span>Kamu</span>
                         <span>&</span>
-                        <span>Sofia</span>
+                        <span>Dia</span>
+                        <input type="text" hidden>
+                        <input
+                            type="text"
+                            placeholder="Dia"
+                            size="1"
+                            autocomplete="off"
+                        >
                     </h1>
                     <h4>Tanpa mengurangi rasa hormat, kami bermaksud mengundang sampeyan untuk menghadiri acara kami.</h4>
-                    <h4>
-                        Saturday,
-                        <span id="day">12</span>
-                        <span id="month">April</span>
-                        <span id="year">2025</span>
+                    <input type="date" name="ceremonyInput" id="ceremonyInput">
+                    <h4 id="ceremony">
+                        <span class="day">tanggal</span>
+                        <span class="month">bulan</span>
+                        <span class="year">tahun</span>
                     </h4>
                     <button id="lick-me" class="mt-5">CLICK ME TO SCROLL</button>
                 </main>
@@ -79,7 +92,7 @@
                         <div class="col-lg-6 mb-4">
                             <div class="row" id="groom">
                                 <div class="col-8 text-end">
-                                    <h2 class="m-0">Ikhsan</h2>
+                                    <h2 class="m-0">Kamu</h2>
                                     <p class="m-0">Anak pertama dari bapak ...., tinggal di kolaka utara sejak lahir sampai sekarang, bekerja sebagai konsultan sipil yang banyak korupsinya</p>
                                 </div>
                                 <div class="col-4">
@@ -93,14 +106,19 @@
                                     <img src="./assets/img/bridegroom/sofia.jpg" class="img-responsive rounded-circle" alt="sofia">
                                 </div>
                                 <div class="col-8 text-start">
-                                    <h2 class="m-0">Sofia</h2>
+                                    <h2></h2>
+                                    <h2 class="m-0">Dia</h2>
                                     <p class="m-0">Anak pertama dari bapak ...., tinggal di wajo sejak lahir sampai sekarang, bekerja sebagai owner di rumah sakit unhas</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <p class="mt-5">Yang Insyaalloh akan diselenggarakan pada:</p>
-                    <h3>Sabtu, 12 April 2025 di UpperHills Convention Hall</h3>
+                    <h3>
+                        <span class="day">tanggal</span>
+                        <span class="month">bulan</span>
+                        <span class="year">tahun</span>
+                    </h3>
                     <h5 style="margin-bottom: 2rem;">
                         Kami mengundang bapak/ibu/saudara/i untuk menghadiri acara pernikahan kami.
                         <br>
@@ -134,40 +152,49 @@
                         </svg>
                     </div>
                     <h1 style="margin-top: 1rem;">Informasi Detail</h1>
-                    <!-- <h2>Lokasi</h2> -->
-                    <h5 class="mt-3">Jl. Metro Tj. Bunga No.995, Mattoangin, Kec. Mariso, Kota Makassar, Sulawesi Selatan</h5>
+                    <h5 class="mt-3">Lokasi</h5>
+                    <input type="text" id="location" name="location">
                     <div class="iframe-wrapper mt-3">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15894.626275921362!2d119.3917879173828!3d-5.158839199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbf1d0dca1cf797%3A0x15a4ebc6aa0744fa!2sUpperHills%20Convention%20Hall!5e0!3m2!1sen!2sid!4v1741937157705!5m2!1sen!2sid"
+                            src=""
                             style="border:0;"
                             allowfullscreen="true"
                             loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
                         ></iframe>
                     </div>
-                    <!-- <h2 class="mt-4">Jadwal Acara</h2> -->
                     <div class="row mt-4">
                         <div class="col-6 text-end akad">
                             <h3>
                                 Akad
                             </h3>
+                            <h4>Waktu acara</h4>
+                            <input type="date" name="date-akad" id="date-akad">
                             <h4>
-                                12 April 2025
+                                <span>
+                                    Waktu mulai
+                                </span>
+                                <span>
+                                    - Selesai
+                                </span>
                             </h4>
-                            <h4>
-                                14:37 - Selesai
-                            </h4>
+                            <input type="time" name="time-akad" id="time-akad">
                         </div>
                         <div class="col-6 text-start resepsi">
                             <h3>
                                 Resepsi
                             </h3>
+                            <h4>Waktu acara</h4>
+                            <input type="date" name="date-resepsi" id="date-resepsi">
                             <h4>
-                                12 April 2025
+                                <span>
+                                    Waktu mulai
+                                </span>
+                                <span>
+                                    - Selesai
+                                </span>
                             </h4>
-                            <h4>
-                                10:00 - Selesai
-                            </h4>
+                            <input type="time" name="time-resepsi" id="time-resepsi">
                         </div>
                     </div>
                     <p id="timer" class="mt-4"></p>
@@ -188,15 +215,18 @@
                                     <div class="wallet-card-header">
                                         <button onclick="copyText(event)">copy</button>
                                         <p>Mandiri</p>
+                                        <input type="text" id="bank" name="bank">
                                     </div>
                                     <div>
                                         <img src="./assets/img/assets/simcard.png">
                                     </div>
                                     <p id="text-wallet">1029318293</p>
+                                    <input type="text" id="wallet" name="wallet">
                                     <input type="text" id="copy-wallet" hidden>
                                     <br>
                                     <br>
                                     <p>Rogan</p>
+                                    <input type="text" id="wallet-name" name="wallet-name">
                                 </div>
                             </div>
                             <div class="col mx-0 mt-2">
@@ -204,15 +234,18 @@
                                     <div class="wallet-card-header">
                                         <button onclick="copyText2(event)">copy</button>
                                         <p>Mandiri</p>
+                                        <input type="text" id="bank" name="bank">
                                     </div>
                                     <div>
                                         <img src="./assets/img/assets/simcard.png">
                                     </div>
                                     <p id="text-wallet2">4187294172u4</p>
+                                    <input type="text" id="wallet" name="wallet">
                                     <input type="text" id="copy-wallet2" hidden>
                                     <br>
                                     <br>
                                     <p>Rogan</p>
+                                    <input type="text" id="wallet-name" name="wallet-name">
                                 </div>
                             </div>
                             <h4 class="mt-2" style="margin-bottom: 2rem;">
@@ -234,6 +267,7 @@
                     <section class="word p-5 my-5 container-fluid">
                         <h4 class="mb-3">Kata-kata dari kami</h4>
                         <h2>"Dunia adalah kesenangan, dan sebaik-baiknya kesenangan dunia adalah istri yang solehah"</h2>
+                        <input type="text" id="word-input" name="word-input">
                     </section>
                     <section class="story">
                         <header class="mb-5">
@@ -264,12 +298,15 @@
                                 <div class="timeline-panel">
                                     <div class="timeline-header">
                                         <h3>12 April 2024</h3>
+                                        <input type="text" id="story-date-input" name="story-date-input">
                                         <p>Pertama Bertemu</p>
+                                        <input type="text" id="story-title-input" name="story-title-input">
                                     </div>
                                     <div class="timeline-body">
                                         <span>
                                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi voluptates tempore eum quod soluta blanditiis.
                                         </span>
+                                        <input type="text" id="story-body-input" name="story-body-input">
                                     </div>
                                 </div>
                                 <div class="sibling"></div>
@@ -282,12 +319,15 @@
                                 <div class="timeline-panel">
                                     <div class="timeline-header">
                                         <h3>15 September 2024</h3>
+                                        <input type="text" id="story-date-input" name="story-date-input">
                                         <p>Mulai birahi</p>
+                                        <input type="text" id="story-title-input" name="story-title-input">
                                     </div>
                                     <div class="timeline-body">
                                         <span>
                                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi voluptates tempore eum quod soluta blanditiis.
                                         </span>
+                                        <input type="text" id="story-body-input" name="story-body-input">
                                     </div>
                                 </div>
                             </li>
@@ -298,12 +338,15 @@
                                 <div class="timeline-panel">
                                     <div class="timeline-header">
                                         <h3>12 April 2025</h3>
+                                        <input type="text" id="story-date-input" name="story-date-input">
                                         <p>Memutuskan untuk komitmen secara halal</p>
+                                        <input type="text" id="story-title-input" name="story-title-input">
                                     </div>
                                     <div class="timeline-body">
                                         <span>
                                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi voluptates tempore eum quod soluta blanditiis.
                                         </span>
+                                        <input type="text" id="story-body-input" name="story-body-input">
                                     </div>
                                 </div>
                                 <div class="sibling"></div>
@@ -511,8 +554,9 @@
                     </section>
                     <section class="close">
                         <h3>Wassalamu'alaikum warohmatullohi wabarokatuh</h3>
-                        <h3>Hormat kami yang mengundang</h3><br>
-                        <h2>Sofia & Ikhsan</h2>
+                        <h3>Hormat kami yang mengundang</h3>
+                        <br>
+                        <h2><span>Kamu</span><span></span> & <span>Dia</span></h2>
                         <br>
                         <br>
                         <h5>Copyright Rogan</h5>

@@ -95,7 +95,7 @@ body {
     border-radius: 50% 20% 40% 50%;
 }
 
-/* Handle on hover */   
+/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: transparent;
 }
@@ -189,6 +189,49 @@ body {
 #hero h5 {
     font-size: 0.7rem;
 }
+
+#hero h1>input[type="text"] {
+    border: 0;
+    display: inline-block;
+    background-color: transparent;
+    width: auto;
+    text-align: center;
+    font-weight: bold;
+    color: var(--pink);
+    display: none;
+}
+
+#hero input[type="date"] {
+    background-color: transparent;
+    border: 0;
+    margin-inline: auto;
+    font-size: 0.8rem;
+    font-family: "Petit Formal Script", cursive;
+    font-weight: bold;
+    transform: translateX(0.7rem);
+    display: none;
+}
+
+#hero input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+#content input[type="time"] {
+    background-color: transparent;
+    border: 0;
+    font-weight: bold;
+    color: white;
+    font-size: 1rem;
+    cursor: text;
+    display: none;
+}
+
+#content input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
 
 #hero button {
     border: 0;
@@ -292,6 +335,12 @@ body {
     color: var(--pink);
 }
 
+#content .home h3>span {
+    font-family: 'Bentham', 'serif';
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
 #content .info {
     min-height: 100vh;
     color: white;
@@ -325,6 +374,16 @@ body {
     font-size: 1.9rem;
 }
 
+#content .info input[type="text"] {
+    border: 0;
+    display: inline-block;
+    background-color: transparent;
+    width: auto;
+    text-align: center;
+    color: white;
+    display: none;
+}
+
 #content .info .iframe-wrapper {
     margin: auto;
     width: 600px;
@@ -332,6 +391,24 @@ body {
     max-width: 100%;
     position: relative;
     pointer-events: none;
+}
+
+#content .info input[type="date"] {
+    background-color: transparent;
+    border: 0;
+    margin-inline: auto;
+    font-size: 1rem;
+    color: white;
+    font-family: 'Outfit', 'sans-serif';
+    transform: translateX(2.1rem);
+    transform: translateY(-0.5rem);
+    display: none;
+}
+
+#content input[type="date"]::-webkit-inner-spin-button,
+#content input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
 }
 
 #content .info .iframe-wrapper::before {
@@ -381,6 +458,11 @@ body {
     border-left: 0.5px solid white;
 }
 
+#content .info .akad h4 span,
+#content .info .resepsi h4 span {
+    font-size: 1rem;
+}
+
 #content .info .btn {
     padding: 10px;
     background-color: var(--pink);
@@ -417,6 +499,18 @@ body {
     font-weight: 400;
     font-size: 0.8rem;
     padding: 15px;
+}
+
+#content .info .wallet-card .wallet-card-header input[type="text"] {
+    text-align: end;
+}
+
+#content .info .wallet-card input[type="text"] {
+    text-align: start;
+}
+
+#content .info .wallet-card .wallet-card-header input[type="text"]{
+    float: right;
 }
 
 #content .info .wallet-card-header {
@@ -460,6 +554,16 @@ body {
 #content .word {
     margin: auto;
     text-align: center;
+}
+
+#content .word>input[type="text"] {
+    border: 0;
+    display: inline-block;
+    background-color: transparent;
+    display: none;
+    font-family: "Petit Formal Script", cursive;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 #content .story {
@@ -524,8 +628,6 @@ body {
     background-color: black;
 }
 
-
-
 #content .story .timeline li {
     width: 100%;
     margin: 5rem 0;
@@ -578,6 +680,14 @@ body {
     border-radius: 50%;
 }
 
+#content .story input[type="text"] {
+    border: 0;
+    background-color: transparent;
+    display: block;
+    font-family: 'Outfit', 'sans serif';
+    display: none;
+}
+
 #content .story .timeline li:nth-child(odd) .timeline-panel {
     text-align: right;
 }
@@ -592,6 +702,13 @@ body {
     width: 100%;
     max-width: 100%;
     min-height: 100px;
+}
+
+#content .story .timeline li:nth-child(odd) .timeline-panel .timeline-header,
+#content .story .timeline li:nth-child(odd) .timeline-panel .timeline-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 #content .story .timeline li .sibling {
@@ -755,9 +872,12 @@ body {
     color: black;
 }
 
-#content .close h3,
-h2 {
-    /* font-weight: lighter !important; */
+
+
+#content .close h2 span{
+    font-family: "Petit Formal Script", cursive;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 #music-button {
@@ -895,12 +1015,17 @@ h2 {
     }
 
     #content .info h4 {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         font-weight: 300;
     }
 
+    #content .info h4 span {
+        font-size: 0.7rem !important;
+        font-weight: 300 !important;
+    }
+
     #content .story h3 {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     #content .story .timeline {
@@ -920,6 +1045,11 @@ h2 {
         border-left: 10px solid transparent;
         border-right: 10px solid black;
         border-top: 10px solid black;
+    }
+
+    #content .story .timeline li:nth-child(odd) .timeline-panel .timeline-header,
+    #content .story .timeline li:nth-child(odd) .timeline-panel .timeline-body {
+        display: inline-block;
     }
 
     #content .story .timeline li {
