@@ -382,6 +382,7 @@ body {
     display: inline-block;
     background-color: transparent;
     width: auto;
+    max-width: 100%;
     text-align: center;
     color: white;
     display: none;
@@ -401,6 +402,7 @@ body {
     border: 0;
     margin-inline: auto;
     font-size: 1rem;
+    max-width: 100%;
     color: white;
     font-family: 'Outfit', 'sans-serif';
     transform: translateX(2.1rem);
@@ -506,13 +508,16 @@ body {
 
 #content .info .wallet-card .wallet-card-header input[type="text"] {
     text-align: end;
+    width: 120px;
 }
 
 #content .info .wallet-card input[type="text"] {
+    width: 120px;
     text-align: start;
 }
 
 #content .info .wallet-card .wallet-card-header input[type="text"]{
+    width: 120px;
     float: right;
 }
 
@@ -561,6 +566,7 @@ body {
 
 #content .word>input[type="text"] {
     border: 0;
+    max-width: 80%;
     display: inline-block;
     background-color: transparent;
     display: none;
@@ -683,14 +689,18 @@ body {
     border-radius: 50%;
 }
 
-#content .story input[type="text"] {
+#content .story li input[type="text"] {
     border: 0;
     background-color: transparent;
     display: block;
+    max-width: 80%;
     font-family: 'Outfit', 'sans serif';
     display: none;
 }
 
+#content .story li:nth-child(odd) input[type="text"] {
+    max-width: 60% ;
+}
 #content .story .timeline li:nth-child(odd) .timeline-panel {
     text-align: right;
 }
