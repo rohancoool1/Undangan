@@ -947,16 +947,16 @@ body {
     }
 
     .cloud-front.first-cloud {
-        bottom: 140px;
+        bottom: 150px;
     }
 
     .cloud-front.first-cloud img {
-        width: 650px !important;
+        width: 550px !important;
         height: auto !important;
     }
 
     .cloud-front.second-cloud {
-        bottom: 20px;
+        bottom: 10px;
     }
 
     .cloud-front.second-cloud img {
